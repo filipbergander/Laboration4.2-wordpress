@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="sv">
+<html <?php language_attributes(); ?>>
 
 <head>
     <meta charset="UTF-8">
@@ -8,14 +8,14 @@
     <meta name="description" content="Upptäck världen med Travel Meraviglia. Vi hjälper dig att planera bekväma och personligt utformade resor till oförglömliga resmål.">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/src/css/style.css">
-    <?php wp_head(); ?>
     <script src="<?php echo get_template_directory_uri(); ?>/src/js/main.js" defer></script>
-    <link rel="icon" type="image/png" href="images/favicon/favicon-96x96.png" sizes="96x96">
-    <link rel="icon" type="image/svg+xml" href="images/favicon/favicon.svg">
-    <link rel="shortcut icon" href="images/favicon/favicon.ico">
-    <link rel="apple-touch-icon" sizes="180x180" href="images/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" href="<?php echo get_template_directory_uri(); ?>/images/favicon/favicon-96x96.png" sizes="96x96">
+    <link rel="icon" type="image/svg+xml" href="<?php echo get_template_directory_uri(); ?>/images/favicon/favicon.svg">
+    <link rel="shortcut icon" href="<?php echo get_template_directory_uri(); ?>/images/favicon/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="<?php echo get_template_directory_uri(); ?>/images/favicon/apple-touch-icon.png">
     <meta name="apple-mobile-web-app-title" content="TravelM">
-    <link rel="manifest" href="images/favicon/site.webmanifest">
+    <link rel="manifest" href="<?php echo get_template_directory_uri(); ?>/images/favicon/site.webmanifest">
+        <?php wp_head(); ?>
 </head>
 
 <body>
