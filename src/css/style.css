@@ -110,12 +110,12 @@ footer a:hover,
     transition: color 0.15s ease;
 }
 
-.footer-nav {
+.footer-menu {
     display: flex;
     justify-content: center;
 }
 
-.footer-nav ul {
+.footer-menu ul {
     display: flex;
     list-style-type: none;
     gap: 1rem;
