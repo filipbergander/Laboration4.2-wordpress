@@ -1,5 +1,4 @@
     <footer>
-        <p>Travel Meraviglia - Upptäck världen med oss</p>
         <nav class="footer-menu" aria-label="Sidfotsmeny">
          <?php 
             wp_nav_menu(array(
@@ -7,7 +6,11 @@
                 'container' => false
             )) ?>
         </nav>
-        <p>&copy; 2026 Travel Meraviglia</p>
+        <?php if (is_active_sidebar('footer-widget')) : ?>
+            <div class="footer-widget">
+                <?php dynamic_sidebar('footer-widget'); ?>
+            </div>
+        <?php endif; ?>    
     </footer>
         <?php wp_footer(); ?>
         </body>

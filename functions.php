@@ -15,3 +15,16 @@ add_theme_support('post-thumbnails');
 // Bildstorlekar
 add_image_size('round-journey-medium', 350, 263, array('center', 'center'));
 add_image_size('large', 750, 563, array('center', 'center'));
+
+function travel_meraviglia_widgets_init() {
+    register_sidebar(array(
+        'name' => 'Sidfot',
+        'id' => 'footer-widget',
+        'description' => 'Kan användas för att justera innehåll i sidfoten.',
+        'before_widget' => '<div class="footer-widget">',
+        'after_widget' => '</div>',
+        'before_title' => '<h3 class="widget-title">',
+        'after_title' => '</h3>',
+    ));
+}
+add_action('widgets_init', 'travel_meraviglia_widgets_init');
