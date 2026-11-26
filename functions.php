@@ -14,3 +14,4 @@ add_theme_support('post-thumbnails');
 
 // Bildstorlekar
 add_image_size('round-journey-medium', 350, 263, array('center', 'center'));
+add_image_size('large', 750, 563, array('center', 'center'));
