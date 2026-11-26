@@ -78,7 +78,8 @@ h2 {
     margin-bottom: 0.5rem;
 }
 
-.intro-text {
+.intro-text,
+main>p {
     margin: 0 auto;
     text-align: center;
     margin-top: 0em;

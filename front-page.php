@@ -1,47 +1,47 @@
 <?php
+
 /**
-* Startsidans mall
-*/
+ * Startsidans mall
+ */
 get_header(); ?>
- <main>
-        <h1 class="news-h1">Upptäck världen med Travel Meraviglia</h1>
-        <p class="intro-text">Vi hjälper dig att upptäcka världen genom personligt utformade och bekväma resor till oförglömliga resmål.</p>
-        <section class="news-section">
-            <h2>Aktuella resor och nyheter</h2>
+<main>
+<?php
+if (have_posts()) : ?>
+    <?php while (have_posts()) : the_post(); ?>
+        <h1 class="news-h1"><?php the_title(); ?></h1>
+        <?php the_content(); ?>
+    <?php endwhile; ?>
+<?php endif; ?>
+
+<section class="news-section">
+    <h2>Aktuella resor och nyheter</h2>
+    <?php
+    $news_query = new WP_QUERY(
+        array(
+            'post_type'         => 'post',
+            'posts_per_page'    => 3
+        )
+    ); ?>
+
+    <?php if ($news_query->have_posts()) : ?>
+        <?php while ($news_query->have_posts()) : $news_query->the_post(); ?>
             <article class="news-article">
-                <h3>Upplev Islands fantastiska natur</h3>
+                <h3><?php the_title(); ?></h3>
                 <div class="news-img">
-                    <img src="images/news/island.jpg" alt="Hav och stränder på Island" width="350" height="263">
+                    <?php if (has_post_thumbnail()) : ?>
+                        <?php the_post_thumbnail('medium', array('alt' => get_the_title(), 'width' => 350, 'height' => 263)); ?>
+                    <?php endif; ?>
                     <div class="news-link">
-                        <p><span class="news-highlight">Nytt samarbete med den isländska turistbyrån!</span><br> Följ med på en resa till Island och upplev mäktiga vattenfall, vulkanlandskap och avkopplande bad i varma laguner med våra utvalda resepaket.</p>
-                        <a href="journey.html" aria-label="Läs mer om Island">Läs mer</a>
+                        <p><?php the_excerpt(); ?></p>
+                        <a href="<?php the_permalink(); ?>" class="news-link" aria-label="Läs mer om <?php the_title(); ?>">Läs mer</a>
                     </div>
                 </div>
             </article>
-
-            <article class="news-article">
-                <h3>Njut i det kulturrika Italien</h3>
-                <div class="news-img">
-                    <img src="images/news/italy.jpg" alt="Strand och vatten i Italien" width="350" height="263">
-                    <div class="news-link">
-                        <p>Upplev genuina smakupplevelser, böljande vinlandskap och historiska städer. Vi har samlat våra bästa rundresor och weekendpaket i Italien inför säsongen.</p>
-                        <a href="journey.html" class="news-link" aria-label="Läs mer om Italien">Läs mer</a>
-                    </div>
-                </div>
-            </article>
-
-            <article class="news-article">
-                <h3>Utforska soliga Spanien</h3>
-                <div class="news-img">
-                    <img src="images/news/spain.jpg" alt="Lägenhetshus vid älv i Spanien" width="350" height="263" loading="lazy">
-                    <div class="news-link">
-                        <p>Från livfulla storstäder till lugna medelhavspärlor – upptäck Spanien i ditt eget tempo med bekvämt boende och personliga utflyktstips på plats.</p>
-                        <a href="journey.html" class="news-link" aria-label="Läs mer om Spanien">Läs mer</a>
-                    </div>
-                </div>
-            </article>
-
-        </section>
-    </main>
-    <?php get_footer(); ?>
-
+        <?php endwhile; ?>
+        <?php wp_reset_postdata(); ?>
+    <?php else : ?>
+        <p>Inga nyheter har publicerats hittills.</p>
+    <?php endif; ?>
+</section>
+</main>
+<?php get_footer(); ?>
