@@ -13,7 +13,7 @@
     <?php wp_head(); ?>
 </head>
 
-<body>
+<body <?php body_class(); ?>>
     <header>
         <a href="<?= get_home_url(); ?>"><img src="<?= get_template_directory_uri(); ?>/images/logo/logo-tm.png" alt="Travel Meraviglia Logo" id="logo"></a>
         <nav class="main-nav" aria-label="Huvudmeny">

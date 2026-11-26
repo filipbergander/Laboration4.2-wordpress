@@ -123,7 +123,8 @@ footer a:hover,
 }
 
 .normal-article,
-.help-article {
+.help-article,
+.cards-page>.wp-block-group {
     max-width: 700px;
     margin: 0 auto;
     margin-bottom: 2rem;
@@ -135,6 +136,31 @@ footer a:hover,
     border-radius: 1rem;
     background-color: #ffffff;
     box-shadow: 0 -2px 20px 3px rgba(0, 0, 0, 0.158);
+}
+
+.cards-page>p,
+.cards-page>h2 {
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 1rem;
+}
+
+.cards-page>h2 {
+    margin-top: 3rem;
+}
+
+
+/* Hindrar knapptexten från att radbrytas på mindre skärmar, lägger sig på två rader pris och förfrågan */
+
+.cards-page .wp-block-button__link,
+.cards-page .news-link {
+    white-space: nowrap;
+}
+
+.cards-page .wp-block-group.is-layout-flex {
+    flex-wrap: wrap;
+    gap: 0.75rem;
 }
 
 .picture-article {
@@ -175,7 +201,8 @@ figcaption {
     background-color: #ffffff7a;
 }
 
-#contact-form {
+#contact-form,
+.contact-form {
     max-width: 450px;
     width: 100%;
     margin: 0 auto;
