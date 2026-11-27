@@ -9,6 +9,13 @@ function travel_meraviglia_register_menus() {
 }
 add_action('after_setup_theme', 'travel_meraviglia_register_menus');
 
+// Dynamisk titel som skiljer sig mellan sidor -> för SEO
+function travel_meraviglia_setup() {
+    add_theme_support('title-tag');
+}
+add_action('after_setup_theme', 'travel_meraviglia_setup');
+
+
 // Aktiverar bilder
 add_theme_support('post-thumbnails');
 
@@ -16,7 +23,10 @@ add_theme_support('post-thumbnails');
 add_image_size('round-journey-medium', 350, 263, array('center', 'center'));
 add_image_size('large', 750, 563, array('center', 'center'));
 
+// Widget för sidfot och allmän information på startsidan
 function travel_meraviglia_widgets_init() {
+
+// Sidfot
     register_sidebar(array(
         'name' => 'Sidfot',
         'id' => 'footer-widget',
@@ -26,7 +36,7 @@ function travel_meraviglia_widgets_init() {
         'before_title' => '<h3 class="widget-title">',
         'after_title' => '</h3>',
     ));
-
+// Widget för information på startsidan
     register_sidebar(array(
         'name' => 'Information',
         'id' => 'information-widget',
