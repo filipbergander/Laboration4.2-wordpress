@@ -11,7 +11,7 @@ I denna laboration har jag skapat webbplatsen Travel Meraviglia som är en fikti
 ![Del av startsidan på webbplatsen Travel Meraviglia](images/thumbnail.png)
 
 ## Publicerad webbplats
-Länk: https://lab41-wordpress.vercel.app/
+Länk: https://studenter.miun.se/~fibe2504/writeable/wordpress/
 
 ## Reflektioner
 Jag valde att skapa just denna typ av rese-webbplats eftersom jag är intresserad av resor och tycker det är roligt att arbeta med mina befintliga bilder, samt ge mig inspiration till framtida resor. Däremot valde jag i uppgiften att generera logotyp, favicon, en bild på om-oss sidan samt textinnehåll på många av sidorna med hjälp av AI, Google Gemini.
