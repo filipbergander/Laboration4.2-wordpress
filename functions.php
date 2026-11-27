@@ -26,5 +26,24 @@ function travel_meraviglia_widgets_init() {
         'before_title' => '<h3 class="widget-title">',
         'after_title' => '</h3>',
     ));
+
+    register_sidebar(array(
+        'name' => 'Information',
+        'id' => 'information-widget',
+        'description' => 'Kan användas för att visa relevant information på startsidan ovanför nyheterna.',
+        'before_widget' => '<div class="information-widget">',
+        'after_widget' => '</div>',
+        'before_title' => '<h3 class="widget-title">',
+        'after_title' => '</h3>',
+    ));
 }
 add_action('widgets_init', 'travel_meraviglia_widgets_init');
+
+// Möjlighet för rollen redaktör att uppdatera widgets och menyer
+function travel_meraviglia_editor_cap() {
+    $role = get_role('editor');
+    if ($role) {
+        $role->add_cap('edit_theme_options');
+    }
+}
+add_action('admin_init', 'travel_meraviglia_editor_cap');

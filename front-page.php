@@ -13,6 +13,12 @@ if (have_posts()) : ?>
     <?php endwhile; ?>
 <?php endif; ?>
 
+   <?php if (is_active_sidebar('information-widget')) : ?>
+            <div class="information-widget-area">
+                <?php dynamic_sidebar('information-widget'); ?>
+            </div>
+        <?php endif; ?>  
+
 <section class="news-section">
     <h2>Aktuella resor och nyheter</h2>
     <?php
@@ -43,6 +49,7 @@ if (have_posts()) : ?>
     <?php else : ?>
         <p>Inga nyheter har publicerats hittills.</p>
     <?php endif; ?>
+
 </section>
 </main>
 <?php get_footer(); ?>
