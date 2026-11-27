@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Mall för varje enskilt nyhetsinlägg
+ * Mall för varje enskilt nyhetsinlägg, när man klickar på läs mer
  */
 get_header(); ?>
 <main>
@@ -10,17 +10,20 @@ get_header(); ?>
             <article class="normal-article single-article">
                 <h1><?php the_title(); ?></h1>
 
-                <?php if (has_post_thumbnail()) : ?>
+                <?php 
+                // Kontrollerar om inlägget har en thumbnail-bild kopplad till sig -> visar den
+                if (has_post_thumbnail()) : ?>
                     <div class="single-img">
                         <?php the_post_thumbnail('large'); ?>
                     </div>
                 <?php endif; ?>
-                
+
                 <div class="single-content">
                     <?php the_content(); ?>
                 </div>
 
                 <?php
+                // Hämtar in skribentens namn och e-postadress och skriver ut dem
                 $author_name = get_the_author_meta('display_name');
                 $author_email = get_the_author_meta('user_email');
                 ?>

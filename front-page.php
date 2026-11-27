@@ -6,6 +6,7 @@
 get_header(); ?>
 <main>
 <?php
+// Skriver ut titel och innehåll
 if (have_posts()) : ?>
     <?php while (have_posts()) : the_post(); ?>
         <h1 class="news-h1"><?php the_title(); ?></h1>
@@ -13,7 +14,9 @@ if (have_posts()) : ?>
     <?php endwhile; ?>
 <?php endif; ?>
 
-   <?php if (is_active_sidebar('information-widget')) : ?>
+   <?php
+   // Visar widgeten i information-widget-området om den är aktiverad på wp-admin
+   if (is_active_sidebar('information-widget')) : ?>
             <div class="information-widget-area">
                 <?php dynamic_sidebar('information-widget'); ?>
             </div>
@@ -22,6 +25,7 @@ if (have_posts()) : ?>
 <section class="news-section">
     <h2>Aktuella resor och nyheter</h2>
     <?php
+    // Visar de tre senaste inläggen från kategorin "nyheter"
     $news_query = new WP_QUERY(
         array(
             'post_type'         => 'post',
@@ -30,7 +34,9 @@ if (have_posts()) : ?>
         )
     ); ?>
 
-    <?php if ($news_query->have_posts()) : ?>
+    <?php
+    // Loopar igenom de inlägg som finns i $news_query och skriver ut titeln, bilden, excerpt och länk till single.php
+    if ($news_query->have_posts()) : ?>
         <?php while ($news_query->have_posts()) : $news_query->the_post(); ?>
             <article class="news-article">
                 <h3><?php the_title(); ?></h3>
@@ -46,10 +52,14 @@ if (have_posts()) : ?>
             </article>
         <?php endwhile; ?>
         <?php wp_reset_postdata(); // Nollställer tidigare frågan ?>  
-    <?php else : ?>
+    <?php
+    // Om inga inlägg finns i kategorin "nyheter" meddelandet
+    else : ?>
         <p>Inga nyheter har publicerats hittills.</p>
     <?php endif; ?>
 
 </section>
 </main>
-<?php get_footer(); ?>
+<?php
+// Skriver ut sidfoten
+get_footer(); ?>

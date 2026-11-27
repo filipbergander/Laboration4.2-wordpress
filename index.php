@@ -1,3 +1,9 @@
+<?php
+/*
+Huvudsidan som ligger sist i hierarkin, används när ingen annan fil kan matcha
+ */
+?>
+
 <?php get_header(); ?>
 <main>
     <?php

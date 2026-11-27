@@ -1,3 +1,5 @@
+/* Grundinställningar för hela webbplatsen */
+
 * {
     margin: 0;
     padding: 0;
@@ -12,6 +14,9 @@ body {
     flex-direction: column;
 }
 
+
+/*Sidhuvudet*/
+
 header {
     display: flex;
     justify-content: space-between;
@@ -25,6 +30,9 @@ header img {
     height: 5.5rem;
     margin-left: 10rem;
 }
+
+
+/* Navigeringsmenyn i sidhuvudet */
 
 .main-nav {
     display: flex;
@@ -54,6 +62,9 @@ header img {
     transition: color 0.15s ease;
 }
 
+
+/*Huvudinnehållet */
+
 main {
     max-width: 1240px;
     margin: 0 auto;
@@ -62,6 +73,9 @@ main {
     flex: 1;
     min-height: 100%;
 }
+
+
+/* Rubriker */
 
 h1 {
     font-size: 2rem;
@@ -78,6 +92,9 @@ h2 {
     margin-bottom: 0.5rem;
 }
 
+
+/* Ingress och text */
+
 .intro-text,
 main>p {
     margin: 0 auto;
@@ -88,6 +105,9 @@ main>p {
     border-bottom: 3px solid #858484;
     border-bottom-style: double;
 }
+
+
+/* Sidfoten med länkar och hover-effekter*/
 
 footer {
     font-size: 0.95rem;
@@ -123,6 +143,9 @@ footer a:hover,
     margin: 0.5rem 0;
 }
 
+
+/* Generell styling på alla artiklar, främst page.php */
+
 .normal-article,
 .help-article,
 .cards-page>.wp-block-group {
@@ -145,6 +168,18 @@ footer a:hover,
 p {
     line-height: 1.4;
 }
+
+
+/* Regel för just kontaktformuläret, döljer normal-article klassen med ytterligare bakgrundsfärg */
+
+.normal-article:has(#contact-form) {
+    background-color: transparent;
+    box-shadow: none;
+    padding: 0;
+}
+
+
+/* "Korten" på resor-sidan */
 
 .cards-page>p,
 .cards-page>h2 {
@@ -175,6 +210,9 @@ p {
 .single-content p {
     line-height: 1.4;
 }
+
+
+/* Om-sidans artikel med bild */
 
 .picture-article {
     max-width: 700px;
@@ -210,9 +248,8 @@ figcaption {
     margin-top: 0.5rem;
 }
 
-#ai-article {
-    background-color: #ffffff7a;
-}
+
+/* Enskilda artiklarna, text och bild, på single.php*/
 
 .single-img {
     margin-bottom: 1rem;
@@ -229,6 +266,9 @@ figcaption {
 .single-article h1 {
     margin: 0.5rem 0 1.25rem;
 }
+
+
+/* Kontaktformuläret*/
 
 #contact-form,
 .contact-form {
@@ -251,15 +291,22 @@ fieldset {
     margin: 0;
 }
 
-legend {
+
+/* Legend-texten i kontaktformuläret */
+
+legend,
+.wpcf7-form legend {
     font-size: 1.25rem;
     font-weight: 600;
+    padding-bottom: 0.5rem;
+}
+
+#contact-form legend+p {
     margin-bottom: 0.5rem;
 }
 
-#contact-form p {
-    margin-bottom: 1rem;
-}
+
+/*Inputs och labels*/
 
 .label-div {
     margin-bottom: 1rem;
@@ -287,6 +334,9 @@ legend {
     min-height: 150px;
 }
 
+
+/* Knapp i formuläret*/
+
 .form-btn {
     padding: 0.75rem 1rem;
     font-weight: 600;
@@ -301,6 +351,9 @@ legend {
     background-color: #002fff;
     transition: background-color 0.15s ease;
 }
+
+
+/* Nyhetesartiklar och hjälp-texter, startsidan*/
 
 .news-section,
 .help-section {
@@ -341,6 +394,9 @@ legend {
     color: #0077ff;
 }
 
+
+/* Bilder i nyheterna */
+
 .news-img {
     display: flex;
     gap: 1rem;
@@ -358,6 +414,9 @@ legend {
     object-fit: cover;
 }
 
+
+/* Publiceringsdatum och skribent inom enskilda artiklar på single.php */
+
 .single-meta-info {
     width: 75%;
     display: flex;
@@ -368,12 +427,18 @@ legend {
     color: #3a3a3a;
 }
 
+
+/* Gå tillbaka länk */
+
 .return-link {
     margin-top: 1rem;
     text-decoration: underline;
     color: rgb(27, 63, 223);
     font-weight: 700;
 }
+
+
+/* Priset för resan */
 
 .price-link {
     margin-top: 1rem;
@@ -384,10 +449,16 @@ legend {
     color: #6d2301;
 }
 
+
+/* Författare */
+
 .news-author {
     font-style: italic;
     color: #3a3a3a;
 }
+
+
+/* Speciell färg på paketerbjudanden, resor sidan*/
 
 .package-article {
     border-left: 5px solid #91908dc7;
@@ -423,6 +494,9 @@ legend {
     margin-bottom: 1rem;
 }
 
+
+/* Sidfoten på erbjudanden */
+
 .package-footer {
     display: flex;
     align-items: center;
@@ -445,11 +519,17 @@ legend {
     transition: background-color 0.3s ease;
 }
 
+
+/* Texten på ai-sidan */
+
 .ai-text {
     display: flex;
     flex-direction: column;
     gap: 1rem;
 }
+
+
+/* Widget för information på startsidan*/
 
 .information-widget {
     max-width: 500px;
@@ -463,6 +543,38 @@ legend {
     border-radius: 1rem;
     background-color: #88ee8d;
     box-shadow: 0 -2px 20px 3px rgba(0, 0, 0, 0.158);
+}
+
+
+/* Kontaktformuläret (contact form 7), och inputs som fyller hela bredden */
+
+.wpcf7 {
+    width: 100%;
+}
+
+#contact-form p {
+    width: 100%;
+    margin: 0;
+}
+
+.wpcf7-form-control-wrap {
+    display: block;
+    width: 100%;
+}
+
+.wpcf7-form-control-wrap input,
+.wpcf7-form-control-wrap textarea {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+
+/* Skicka knappen i formuläret full bredd */
+
+#contact-form .form-btn,
+input.wpcf7-submit.form-btn {
+    width: 100%;
+    box-sizing: border-box;
 }
 
 @media (max-width: 1024px) {

@@ -1,5 +1,13 @@
+<?php
+/*
+ * Headern för webbplatsen, dynamiskt
+*/
+ ?>
+
 <!DOCTYPE html>
-<html <?php language_attributes(); ?>>
+<html <?php
+// Aktuella språket
+language_attributes(); ?>>
 
 <head>
     <meta charset="UTF-8">
@@ -11,6 +19,9 @@
     <?php wp_head(); ?>
 </head>
 
+<?php
+// Skriver navigeringsmeny och logotyp i headern
+?>
 <body <?php body_class(); ?>>
     <header>
         <a href="<?= get_home_url(); ?>"><img src="<?= get_template_directory_uri(); ?>/images/logo/logo-tm.png" alt="Travel Meraviglia Logo" id="logo"></a>
